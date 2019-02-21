@@ -1,0 +1,63 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Centre Aéré</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script>
+        function allowDrop (ev)
+        {
+            ev.preventDefault();
+        }
+        function drop(ev)
+        {
+                var elt = ev.dataTransfer.getData("text");
+                ev.target.appendChild(document.getElementById(elt));
+        }
+        function drag(ev)
+        {
+            ev.dataTransfer.setData("text",ev.target.id);
+        }
+    </script>
+</head>
+<body>
+    <div id="div1">
+        <title>Liste des maisons</title>
+        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+        <tr>
+            <td>Numéro maison</td>
+            <td>Nom maison</td>
+        </tr>
+    </div>
+    <div id="div2">
+        <title>Les chambres de la maison</title>
+        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+        <tr>
+            <td>Numéro chambre</td>
+            <td>Nom chambre</td>
+            <td>Nombre de lit</td>
+            <td>Type de chambre</td>
+        </tr>
+    </div>
+    <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>>
+        <title>Les enfants disponibles</title>
+        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+        <tr>
+            <td>Numéro enfant</td>
+            <td>Prénom enfant</td>
+            <td>Sex enfant</td>
+        </tr>
+    </div>
+    <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>>
+        <title>Les enfants placés</title>
+        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+        <tr>
+            <td>Numéro enfant</td>
+            <td>Prénom enfant</td>
+            <td>Sex enfant</td>
+        </tr>
+    </div>
+</body>
+</html>
